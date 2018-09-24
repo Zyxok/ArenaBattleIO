@@ -7,6 +7,11 @@
 <body>
 
     <script src="js/main.js"></script>
-
+    <script>
+        var socket = io();
+        socket.on("hey", (data) => {
+            console.log(data.reason)
+        })
+    </script>
 </body>
 </html>

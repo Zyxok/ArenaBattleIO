@@ -9,3 +9,18 @@ app.get('/', (req, res) => {
 app.use('/client',express.static(__dirname + '/client'));
 
 server.listen(8080);
+var socket_list = {};
+io.sockets.on("connection", (socket) => {
+    console.log("connection");
+    socket.id = Math.random();
+    socket.x = 0;
+    socket.y = 0;
+    socket_list[socket.id] = socket;
+
+    socket.on("disconnect", (socket) => {
+        console.log("Disconnect");
+    });
+    socket.emit("hey", {
+        reason: "whats up",
+    });
+});
