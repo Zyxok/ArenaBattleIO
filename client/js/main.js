@@ -85,6 +85,8 @@ function addPlayer(self, playerInfo) {
   self.ship.setDrag(100);
   self.ship.setAngularDrag(100);
   self.ship.setMaxVelocity(200);
+  self.ship.body.collideWorldBounds = true;
+  self.ship.body.bounce.set(1)
 }
 
 function addOtherPlayers(self, playerInfo) {
