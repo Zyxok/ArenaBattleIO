@@ -9,13 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "VILLERS Mickaël",
-  "contributors": [
-  ],
+  "contributors": [],
   "dependencies": {
     "express": "^4.12.4",
     "socket.io": "^1.3.5",
     "bower": "*"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

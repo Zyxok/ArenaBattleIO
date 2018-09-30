@@ -1,8 +1,8 @@
 'use strict';
 
-import Enemy from 'scripts/class/enemy';
-import Player from 'scripts/class/player';
-import Particules from 'scripts/class/particles';
+import Enemy from '../class/enemy.js';
+import Player from '../class/player.js';
+import Particules from '../class/particles.js';
 
 class Game {
     create(game) {
