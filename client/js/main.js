@@ -20,8 +20,8 @@ var config = {
   var game = new Phaser.Game(config);
   
   function preload() {
-    this.load.image('ship', 'assets/spaceShips_001.png');
-    this.load.image('otherPlayer', 'assets/enemyBlack5.png');
+    this.load.image('ship', 'assets/archer2.png');
+    this.load.image('otherPlayer', 'assets/archer2.png');
     this.load.image('star', 'assets/star_gold.png');
   }
   
@@ -76,24 +76,15 @@ var config = {
   }
   
   function addPlayer(self, playerInfo) {
-    self.ship = self.physics.add.image(playerInfo.x, playerInfo.y, 'ship').setOrigin(0.5, 0.5).setDisplaySize(53, 40);
-    if (playerInfo.team === 'blue') {
-      self.ship.setTint(0x0000ff);
-    } else {
-      self.ship.setTint(0xff0000);
-    }
+    self.ship = self.physics.add.image(playerInfo.x, playerInfo.y, 'ship').setOrigin(0.5, 0.5).setDisplaySize(300, 580);
+    lf.ship.setTint(0xff0000);
     self.ship.setDrag(100);
     self.ship.setAngularDrag(100);
     self.ship.setMaxVelocity(200);
   }
   
   function addOtherPlayers(self, playerInfo) {
-    const otherPlayer = self.add.sprite(playerInfo.x, playerInfo.y, 'otherPlayer').setOrigin(0.5, 0.5).setDisplaySize(53, 40);
-    if (playerInfo.team === 'blue') {
-      otherPlayer.setTint(0x0000ff);
-    } else {
-      otherPlayer.setTint(0xff0000);
-    }
+    const otherPlayer = self.add.sprite(playerInfo.x, playerInfo.y, 'otherPlayer').setOrigin(0.5, 0.5)
     otherPlayer.playerId = playerInfo.playerId;
     self.otherPlayers.add(otherPlayer);
   }
@@ -114,7 +105,7 @@ var config = {
         this.ship.setAcceleration(0);
       }
     
-      //this.physics.arcade.World.wrap(this.ship, 5);
+      this.physics.arcade.World.wrap(this.ship, 5);
   
       // emit player movement
       var x = this.ship.x;
