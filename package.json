@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/KryptoCrash/AnythingIO#readme",
   "dependencies": {
-    "express": "^4.16.3",
-    "phaser": "^3.13.0",
+    "express": "^4.16.4",
+    "phaser": "^3.14.0",
     "socket.io": "^2.1.1"
   }
 }
