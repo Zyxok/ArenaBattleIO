@@ -1,8 +1,8 @@
 var config = {
     type: Phaser.AUTO,
     parent: 'phaser-example',
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 800,
     physics: {
       default: 'arcade',
       arcade: {
@@ -62,8 +62,8 @@ var config = {
     this.redScoreText = this.add.text(584, 16, '', { fontSize: '32px', fill: '#FF0000' });
     
     this.socket.on('scoreUpdate', function (scores) {
-      self.blueScoreText.setText('Blue: ' + scores.blue);
-      self.redScoreText.setText('Red: ' + scores.red);
+      self.blueScoreText.setText('B: ' + scores.blue);
+      self.redScoreText.setText('R: ' + scores.red);
     });
   
     this.socket.on('starLocation', function (starLocation) {
@@ -78,7 +78,7 @@ var config = {
   function addPlayer(self, playerInfo) {
     self.ship = self.physics.add.image(playerInfo.x, playerInfo.y, 'ship').setOrigin(0.5, 0.5).setDisplaySize(300, 580);
     lf.ship.setTint(0xff0000);
-    self.ship.setDrag(100);
+    self.ship.setDrag(200);
     self.ship.setAngularDrag(100);
     self.ship.setMaxVelocity(200);
   }
